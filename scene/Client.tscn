@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bjn5garhlm06v"]
+
+[ext_resource type="PackedScene" uid="uid://cicc8bfusuo00" path="res://scene/Object.tscn" id="1_78ook"]
+[ext_resource type="Script" uid="uid://ck1ecgl7xcmpm" path="res://script/class/client.gd" id="2_2gbcw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gbcw"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_itxqv"]
+material = SubResource("StandardMaterial3D_2gbcw")
+size = Vector2(20, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gbcw"]
+
+[node name="Client" unique_id=683827261 instance=ExtResource("1_78ook")]
+script = ExtResource("2_2gbcw")
+nb_requests_second = 2
+
+[node name="Body" parent="." index="0" unique_id=1023451259]
+scale = Vector2(1, 0.9836665)
+
+[node name="Mesh" parent="Body" index="0" unique_id=1012777171]
+mesh = SubResource("QuadMesh_itxqv")
+
+[node name="Collision" parent="Body" index="1" unique_id=1711258536]
+shape = SubResource("RectangleShape2D_2gbcw")
