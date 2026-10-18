@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bb5nwdnhnwe5r"]
+
+[ext_resource type="Script" uid="uid://pivyuefqeytj" path="res://script/class/connection.gd" id="1_vmsbv"]
+
+[sub_resource type="Curve2D" id="Curve2D_v0l8b"]
+
+[node name="Connection" type="Node2D" unique_id=2025326465]
+script = ExtResource("1_vmsbv")
+
+[node name="Path" type="Path2D" parent="." unique_id=1885649936]
+modulate = Color(1, 0.2, 1, 1)
+curve = SubResource("Curve2D_v0l8b")
+
+[node name="Line" type="Line2D" parent="." unique_id=200945830]
+width = 5.0
