@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dy1hdyyq28yk7"]
+
+[ext_resource type="PackedScene" uid="uid://cicc8bfusuo00" path="res://scene/Object.tscn" id="1_klmli"]
+[ext_resource type="Script" uid="uid://ciwjvvwx4yakt" path="res://script/class/server.gd" id="2_kyyu8"]
+
+[node name="Server" unique_id=683827261 instance=ExtResource("1_klmli")]
+script = ExtResource("2_kyyu8")
