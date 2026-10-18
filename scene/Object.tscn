@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cicc8bfusuo00"]
+
+[ext_resource type="Script" uid="uid://df51sg7wkvpxs" path="res://script/class/object.gd" id="1_u2r5m"]
+
+[node name="Object" type="Node2D" unique_id=683827261]
+script = ExtResource("1_u2r5m")
+
+[node name="Body" type="StaticBody2D" parent="." unique_id=1023451259]
+input_pickable = true
+
+[node name="Mesh" type="MeshInstance2D" parent="Body" unique_id=1012777171]
+
+[node name="Collision" type="CollisionShape2D" parent="Body" unique_id=1711258536]
+
+[connection signal="input_event" from="Body" to="." method="_on_body_input_event"]
