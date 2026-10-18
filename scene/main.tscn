@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://t043kqfgwjrp"]
 
+[ext_resource type="Script" uid="uid://crgdkmo42qrjb" path="res://script/main.gd" id="1_wp4xf"]
+
 [node name="Main" type="Node2D" unique_id=385218558]
+script = ExtResource("1_wp4xf")
 
 [node name="CameraJoint" type="Node2D" parent="." unique_id=1002972241]
 
