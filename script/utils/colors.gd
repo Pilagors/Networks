@@ -16,15 +16,15 @@ const COLORS: Dictionary = {
 	Palette.YELLOW: Color("#ffff8f"),
 	Palette.GREEN: Color("#7be098"),
 	Palette.BLUE: Color("#849ad8"),
-	Palette.RED: Color("#e8b382"),
-	Palette.ORANGE: Color("#d8828e"),
+	Palette.ORANGE: Color("#e8b382"),
+	Palette.RED: Color("#d8828e"),
 	Palette.PURPLE: Color("#a776c1"),
 	Palette.GRAY: Color("#545155"),
 }
 
-static func get_random() -> Color:
+func get_random_color() -> Color:
 	var random := randi_range(0, Palette.size() - 1)
 	return COLORS[random]
 
-static func get_color(color: Palette) -> Color:
+func get_color(color: Palette) -> Color:
 	return COLORS[color]
