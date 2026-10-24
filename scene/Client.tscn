@@ -13,7 +13,7 @@ size = Vector2(20, 20)
 
 [node name="Client" unique_id=683827261 instance=ExtResource("1_78ook")]
 script = ExtResource("2_2gbcw")
-nb_requests_minute = 30
+nb_requests_minute = 30.0
 
 [node name="Body" parent="." index="0" unique_id=1023451259]
 scale = Vector2(1, 0.9836665)
@@ -27,4 +27,8 @@ shape = SubResource("RectangleShape2D_2gbcw")
 [node name="SendPacket" type="Timer" parent="." index="1" unique_id=109664625]
 autostart = true
 
+[node name="Patience" type="Timer" parent="." index="2" unique_id=868649068]
+wait_time = 20.0
+
 [connection signal="timeout" from="SendPacket" to="." method="_on_send_packet_timeout"]
+[connection signal="timeout" from="Patience" to="." method="_on_patience_timeout"]
