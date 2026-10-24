@@ -7,11 +7,28 @@ class_name Connection
 @onready var path: Path2D = $Path
 @onready var line: Line2D = $Line
 
+var packets : Array[Packet] = []
+
+func _process(delta: float) -> void:
+	pass
+
 func _ready() -> void:
 	update_connection()
 	
 func _draw() -> void:
 	update_connection()
+	
+func set_connection(a: ConnectedObject, b: ConnectedObject) -> void:
+	object_a = a
+	object_b = b
+	
+	update_connection()
+
+func get_other_object(this: ConnectedObject) -> ConnectedObject:
+	if object_a != this:
+		return object_a
+	else:
+		return object_b
 
 func update_connection() -> void:
 	if object_a == null && object_b == null:
@@ -36,3 +53,22 @@ func update_connection() -> void:
 	line.add_point(b)
 	
 	queue_redraw()
+
+func send_packet(packet: Packet) -> void:
+	if packet == null:
+		return
+	
+	var message_direction = get_message_direction(packet)
+	packet.DIRECTION = message_direction
+	packets.append(packet)
+	
+	path.add_child(packet)
+	print("paquet envoyé!")
+	
+func get_message_direction(paquet : Packet) -> int:
+	if object_a == paquet.DEST:
+		return -1
+	elif object_b == paquet.DEST:
+		return 1
+	else:
+		return 0
