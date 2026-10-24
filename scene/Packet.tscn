@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bnf17fharpoqf"]
+
+[ext_resource type="Script" uid="uid://dopvmpgfa6a1w" path="res://script/class/packet.gd" id="1_16an3"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_44saq"]
+radius = 10.0
+height = 10.0
+
+[node name="Packet" type="PathFollow2D" unique_id=445890464]
+script = ExtResource("1_16an3")
+metadata/_custom_type_script = "uid://dopvmpgfa6a1w"
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=559367506]
+mesh = SubResource("SphereMesh_44saq")
