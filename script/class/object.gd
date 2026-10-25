@@ -20,6 +20,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	mesh_2d.modulate = color
 
+func resize(size: float) -> void:
+	body_2d.scale = Vector2(size, size)
+
 func add_packet(packet: Packet) -> void:
 	all_packets.append(packet)
 	

@@ -3,5 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://cicc8bfusuo00" path="res://scene/Object.tscn" id="1_klmli"]
 [ext_resource type="Script" uid="uid://ciwjvvwx4yakt" path="res://script/class/server.gd" id="2_kyyu8"]
 
+[sub_resource type="SphereMesh" id="SphereMesh_klmli"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_klmli"]
+radius = 0.5
+
 [node name="Server" unique_id=683827261 instance=ExtResource("1_klmli")]
 script = ExtResource("2_kyyu8")
+
+[node name="Mesh" parent="Body" parent_id_path=PackedInt32Array(1023451259) index="0" unique_id=1012777171]
+mesh = SubResource("SphereMesh_klmli")
+
+[node name="Collision" parent="Body" parent_id_path=PackedInt32Array(1023451259) index="1" unique_id=1711258536]
+shape = SubResource("CircleShape2D_klmli")

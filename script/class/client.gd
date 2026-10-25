@@ -24,6 +24,7 @@ func _on_send_packet_timeout() -> void:
 		packet.set_destination(dest.get_other_object(self))
 		packet.set_source(self)
 		dest.send_packet(packet)
+		patience_deactivation()
 	
 	if dest == null:
 		patience_activation()

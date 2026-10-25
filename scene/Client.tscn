@@ -7,9 +7,9 @@
 
 [sub_resource type="QuadMesh" id="QuadMesh_itxqv"]
 material = SubResource("StandardMaterial3D_2gbcw")
-size = Vector2(20, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gbcw"]
+size = Vector2(1, 1)
 
 [node name="Client" unique_id=683827261 instance=ExtResource("1_78ook")]
 script = ExtResource("2_2gbcw")
