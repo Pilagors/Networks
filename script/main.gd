@@ -14,7 +14,7 @@ var objects_position : PositionCollection = PositionCollection.new()
 var previzu_line : Line2D = null
 
 func _ready() -> void:
-	new_server(Vector2.ZERO)
+	new_server()
 	new_client()
 	
 func _process(_delta: float) -> void:
@@ -76,15 +76,16 @@ func new_connection(a: ConnectedObject, b: ConnectedObject) -> Connection:
 	return connection
 
 
-func new_server(server_position: Vector2) -> ConnectedObject:
+func new_server() -> ConnectedObject:
 	var server : ConnectedObject = SERVER_SCENE.instantiate()
+	var box_limit := get_box_limit()
 	
 	if color_placed.is_empty():
 		add_random_color()
 		
 	server.set_object_color(color_placed.pick_random())
 	
-	server.position = server_position
+	server.position = objects_position.get_possible_position(box_limit, SERVER_SIZE)
 	add_child(server)
 	
 	server.resize(SERVER_SIZE)
