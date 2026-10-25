@@ -13,3 +13,7 @@ curve = SubResource("Curve2D_v0l8b")
 
 [node name="Line" type="Line2D" parent="." unique_id=200945830]
 width = 5.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1001864909]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=447014223]
